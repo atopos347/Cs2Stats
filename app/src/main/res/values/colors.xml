@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- 启动图标背景已改为 drawable/ic_launcher_background.xml（藏蓝斜向渐变），
-         不再用纯色，这里不再需要 ic_launcher_background 颜色。 -->
+    <!-- 启动图标底色：取自 drawable-nodpi/ic_launcher_art.png 图形自身的深色底，
+         与前景图形同色，任何桌面遮罩下都看不出接缝。 -->
+    <color name="ic_launcher_background">#15181F</color>
 </resources>

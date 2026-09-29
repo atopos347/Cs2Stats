@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    启动图标前景：用户提供的整图（drawable-nodpi/ic_launcher_art.png，942x944，四角透明）。
+    居中缩到 66dp（Google 自适应图标安全区直径）：
+    - 内容最远点（士兵靴尖）= 1.2 倍半宽 -> 66dp 时物理半径 39.6dp，
+      72dp 圆形遮罩只咬掉靴尖最后约 3.6dp（实机约 2px），其余内容全在遮罩内；
+    - 底色层与图形自带底色同为 #15181F，留白看不出，任何遮罩形状都成立。
+    108dp 画布上放置，自适应图标由系统自行裁切。
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="66dp"
+        android:height="66dp"
+        android:gravity="center">
+        <bitmap
+            android:antialias="true"
+            android:filter="true"
+            android:gravity="fill"
+            android:src="@drawable/ic_launcher_art" />
+    </item>
+</layer-list>
