@@ -1,8 +1,17 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
+
+// 本机 release 签名配置：keystore.properties 已被 .gitignore 忽略（连同 *.jks），不进仓库。
+// 缺失时 signingConfig 为 null，assembleRelease 出的是未签名包（只能自用调试），构建不报错。
+val releaseSigning: Properties? =
+    rootProject.file("keystore.properties").takeIf { it.exists() }?.let { f ->
+        Properties().apply { f.inputStream().use { load(it) } }
+    }
 
 android {
     namespace = "com.cs2stats.app"
@@ -16,6 +25,17 @@ android {
         versionName = "0.6.0"
     }
 
+    signingConfigs {
+        if (releaseSigning != null) {
+            create("release") {
+                storeFile = rootProject.file(releaseSigning.getProperty("storeFile"))
+                storePassword = releaseSigning.getProperty("storePassword")
+                keyAlias = releaseSigning.getProperty("keyAlias")
+                keyPassword = releaseSigning.getProperty("keyPassword")
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -24,6 +44,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = releaseSigning?.let { signingConfigs.getByName("release") }
         }
         debug {
             applicationIdSuffix = ".debug"
