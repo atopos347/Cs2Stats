@@ -478,3 +478,21 @@ Material3 · Navigation · DataStore · OkHttp 4.12.0 · Coil 2.7.0 · minSdk 26
 - **强制的主题档与系统不一致时，冷启动第一帧仍是系统配色**：设置是 DataStore 异步读的，
   读到后一帧内切到应用主题；窗口背景按系统日夜取资源（`values-night`），所以会出现一次极短的主题过渡
   （跟随系统时没有这个问题）。
+
+---
+
+## 许可证
+
+本项目采用 **GNU General Public License v3.0**，全文见 [`LICENSE`](LICENSE)（官方原文，35,149 字节）。
+
+- Copyright (C) 2026 atopos347；
+- **允许**使用、修改、再分发（含商用），**但衍生作品必须以 GPL-3.0 同样条款开放源码**；
+- 仓库不含任何账号、密码、Cookie；`backups/` 等本地回滚件不随仓库分发。
+
+**随二进制一并分发的第三方组件**（各有各的许可，不被本项目的 GPL 覆盖）：
+
+| 组件 | 用途 | 许可 |
+| --- | --- | --- |
+| [demoinfocs-golang](https://github.com/markus-wa/demoinfocs-golang) v5.2.0 | demo 解析核心，交叉编译进 `libcs2demo.so` | **MIT**（已核对 `LICENSE.md`） |
+| AndroidX / Jetpack Compose / Material3 | 应用框架与 UI | Apache-2.0 |
+| `tools/demoparse` 的其余 Go 依赖 | 解析辅助（`gobitread`、`godispatch` 等） | 逐个见 `go.mod` / `go.sum` 对应仓库 |
