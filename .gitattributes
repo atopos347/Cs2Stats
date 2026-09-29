@@ -1,0 +1,17 @@
+# 统一按文本处理，入库前归一为 LF（Windows/macOS/Linux 克隆结果一致）
+* text=auto
+
+# Shell 脚本必须保持 LF，否则在 Linux/macOS 上无法执行
+gradlew text eol=lf
+*.sh text eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+
+# 二进制：原生库 / 图片 / 打包件，绝不做换行转换
+*.so binary
+*.jar binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.html text

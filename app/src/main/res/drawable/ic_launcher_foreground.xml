@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  启动图标前景（108×108 画布，安全区 = 中心 72dp）：**准星断环 + 递增柱状图**。
+    · 断环：CS 准星的意象，四象限圆弧、四边留缺口（半径 33 / 描边 5 / 圆头），
+      外沿 35.5 仍在 36 的安全半径内，任何遮罩形状都不会裁到；
+    · 柱状图：三根递增（17 / 27 / 37），底部对齐 y=72，把「战绩、评分走势」点出来；
+      用圆头描边画，柱子自带圆角；
+    · 配色：断环 = 品牌火焰橙 #FF6A3D（应用里的强调色），柱子 = 浅蓝白 #DCE6FF，
+      和界面里的 primaryContainer 一路，两色一底不喧宾夺主。
+  顶边缺口正对中间那根柱子 —— 中间柱子不与准星竖臂打架。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 准星断环：四段弧（每段 66°，四边各留 24° 缺口） -->
+    <path
+        android:pathData="M86.28,60.86 A33,33 0 0 1 60.86,86.28"
+        android:strokeColor="#FF6A3D"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M47.14,86.28 A33,33 0 0 1 21.72,60.86"
+        android:strokeColor="#FF6A3D"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M21.72,47.14 A33,33 0 0 1 47.14,21.72"
+        android:strokeColor="#FF6A3D"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M60.86,21.72 A33,33 0 0 1 86.28,47.14"
+        android:strokeColor="#FF6A3D"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- 递增柱状图：三根，底对齐 y=72 -->
+    <path
+        android:pathData="M42,72 L42,55"
+        android:strokeColor="#DCE6FF"
+        android:strokeWidth="9"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M54,72 L54,45"
+        android:strokeColor="#DCE6FF"
+        android:strokeWidth="9"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M66,72 L66,35"
+        android:strokeColor="#DCE6FF"
+        android:strokeWidth="9"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+</vector>

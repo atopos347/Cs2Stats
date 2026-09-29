@@ -1,0 +1,35 @@
+# ===================== 构建产物 =====================
+*.iml
+.gradle/
+.kotlin/
+build/
+app/build/
+/captures
+.externalNativeBuild
+.cxx/
+
+# ===================== 本地环境 =====================
+local.properties
+.idea/
+*.ipr
+*.iws
+.vscode/
+.DS_Store
+Thumbs.db
+
+# ===================== 签名与凭据（绝不能上传）=====================
+*.jks
+*.keystore
+*.p12
+*.pek
+secrets.properties
+keystore.properties
+
+# ===================== 本地回滚备份（不入库，见 README）=====================
+backups/
+
+# ===================== 调试 / 临时产物 =====================
+*.apk
+*.aab
+*.hprof
+*.log
